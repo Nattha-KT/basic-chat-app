@@ -2,7 +2,7 @@ import React from "react";
 import { useAuthContext } from "../../context/AuthContext.jsx";
 import useConversation from "../../hook/useConversation.js";
 import { extractTime } from "../../utils/extractTime.js";
-import {cn} from "../../utils/utils.js"
+import { cn } from "../../utils/utils.js";
 
 const Message = ({ message }) => {
   const { authUser } = useAuthContext();
@@ -14,7 +14,6 @@ const Message = ({ message }) => {
     ? authUser.profilePic
     : selectedConversation?.profilePic;
 
-
   return (
     <div className={`chat ${chatClassName}`}>
       <div className="chat-image avatar">
@@ -23,9 +22,13 @@ const Message = ({ message }) => {
         </div>
       </div>
       <div
-        className={cn('chat-bubble text-white pb-2',{
-          'bg-sky-500':fromMe
-        })}
+        className={cn(
+          "chat-bubble text-white pb-2",
+          {
+            "bg-sky-500": fromMe,
+          },
+          { shake: message.shouldShake }
+        )}
       >
         {message.message}
       </div>
