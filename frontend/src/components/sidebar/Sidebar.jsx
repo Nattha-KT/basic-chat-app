@@ -1,4 +1,4 @@
-import Conversations from "../conversation/Conversation.jsx";
+import Conversations from "../conversation/Conversations.jsx";
 import {SearchInput,LogoutBtn} from "../shared";
 
 const Sidebar = () => {
